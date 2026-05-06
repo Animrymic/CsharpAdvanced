@@ -6,10 +6,15 @@
         public string LastName { get; set; }
         public int Age { get; set; }
 
-        public static int  NumberOfDeveloper { get; set; }
+        public static int  NumberOfDevelopers { get; set; }
         public Developer(string firstName, string lastName, int age)
         {
-            Console.WriteLine("adsadada");
+            
+        }
+
+        public int GetNumberOfDevelopers()
+        {
+            return NumberOfDevelopers;
         }
     }
 }
