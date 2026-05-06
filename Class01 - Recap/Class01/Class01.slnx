@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Class01.Examples/Class01.Examples.csproj" />
   <Project Path="Class01.Exercise1/Class01.Exercise1.csproj" Id="d7dba001-f167-4ceb-845a-41642ffe51bc" />
+  <Project Path="Class01.Exercise2/Class01.Exercise2.csproj" Id="c1f612df-48dd-4bd3-8e02-cb9066264001" />
   <Project Path="Class01.Recap/Class01.Recap.csproj" />
 </Solution>

@@ -21,20 +21,55 @@ string text = Console.ReadLine();
 
 Console.WriteLine("\n Occurances: ");
 
-foreach (var name in names)
+//foreach (var name in names)
 {
-    int count = 0;
+    //int count = 0;
 
-    string lowerText = text.ToLower();
-    string lowerName = name.ToLower();
+    //string lowerText = text.ToLower();
+    // string lowerName = name.ToLower();
 
-    int index = 0;
+    //int index = 0;
 
-    while ((index = lowerText.IndexOf(lowerName, index)) != -1)
+    // while ((index = lowerText.IndexOf(lowerName, index)) != -1)
+    //{
+    //  count++;
+    //   index += lowerName.Length; 
+    // }
+
+    //Console.WriteLine($"{name}: {count}");
+    //}
+
+    foreach (var name in names)
     {
-        count++;
-        index += lowerName.Length; 
-    }
+        int count = 0;
+        string currentWord = "";
+        string lowerName = name.ToLower();
 
-    Console.WriteLine($"{name}: {count}");
+        for (int i = 0; i < text.Length; i++)
+        {
+            char c = text[i];
+
+            if (c != ' ' && c != '.' && c != ',' && c != '!' && c != '?' &&
+                c != ';' && c != ':' && c != '-' && c != '\n' && c != '\t')
+            {
+                currentWord += char.ToLower(c);
+            }
+            else
+            {
+                if (currentWord == lowerName)
+                {
+                    count++;
+                }
+
+                currentWord = "";
+            }
+        }
+
+        if (currentWord == lowerName)
+        {
+            count++;
+        }
+
+        Console.WriteLine($"{name}: {count}");
+    }
 }
