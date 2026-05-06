@@ -15,6 +15,7 @@
         public int GetNumberOfDevelopers()
         {
             return NumberOfDevelopers;
+            Console.WriteLine();
         }
     }
 }
