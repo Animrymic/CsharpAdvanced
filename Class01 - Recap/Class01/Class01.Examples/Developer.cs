@@ -1,7 +1,6 @@
 ﻿namespace Class01.Examples;
 
-namespace StaticRecap
-{
+
     public class Developer
     {
         public string FirstName { get; set; }
@@ -11,12 +10,19 @@ namespace StaticRecap
         public static int NumberOfDevelopers { get; set; }
         public Developer(string firstName, string lastName, int age)
         {
-
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            NumberOfDevelopers++;
         }
 
         public int GetNumberOfDevelopers()
         {
             return NumberOfDevelopers;
         }
+
+        public static void ResetNumberOfDevelopers()
+        {
+
+        }
     }
-}
