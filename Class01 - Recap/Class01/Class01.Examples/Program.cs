@@ -9,7 +9,7 @@
         public static int  NumberOfDeveloper { get; set; }
         public Developer(string firstName, string lastName, int age)
         {
-            Console.WriteLine("dadadad");
+            Console.WriteLine("adsadada");
         }
     }
 }
