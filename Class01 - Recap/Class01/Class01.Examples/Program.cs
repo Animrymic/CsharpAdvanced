@@ -1,21 +1,5 @@
-﻿namespace StaticRecap
-{
-    public class Developer
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
+﻿using Class01.Examples.StaticRecap;
 
-        public static int  NumberOfDevelopers { get; set; }
-        public Developer(string firstName, string lastName, int age)
-        {
-            
-        }
-
-        public int GetNumberOfDevelopers()
-        {
-            return NumberOfDevelopers;
-            Console.WriteLine();
-        }
-    }
-}
+var mario = new Developer("Mario", "Rossi", 30);
+Console.WriteLine(mario.GetNumberOfDevelopers());
+Console.WriteLine(Developer.NumberOfDevelopers);
