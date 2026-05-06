@@ -6,7 +6,8 @@
         public string LastName { get; set; }
         public int Age { get; set; }
 
-        public Developer()
+        public static int  NumberOfDeveloper { get; set; }
+        public Developer(string firstName, string lastName, int age)
         {
             
         }
