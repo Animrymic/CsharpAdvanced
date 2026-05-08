@@ -16,4 +16,9 @@ public class Operations : Person
     {
         Projects = projects;
     }
+
+    public override string GetInfo()
+    {
+        return $"{GetFullName()} ({Age}) - Currently working on {Projects.Count} projects";
+    }
 }

@@ -25,4 +25,6 @@ public abstract class Person
         return $"{FirstName} {LastName}";
     }
 
+    public abstract string GetInfo();
+
 }

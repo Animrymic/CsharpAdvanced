@@ -17,4 +17,8 @@ public class Tester : Person
         BugsFound = bugsFound;
     }
 
+    public override string GetInfo()
+    {
+        return $"{GetFullName()} ({Age}) - Found: {BugsFound} Bugs"; 
+    }
 }

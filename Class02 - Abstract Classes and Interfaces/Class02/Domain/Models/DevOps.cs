@@ -18,4 +18,9 @@ public class DevOps : Person
         AWSCertified = hasAwsCertificate;
         AzureCertified = hasAzureCertificate;
     }
+
+    public override string GetInfo()
+    {
+        return $"{GetFullName()} ({Age}) - Has: {(AWSCertified ? "AWS Certificate" : "")} {(AzureCertified ? "Azure Certificate" : "")} {(AWSCertified || AzureCertified ? "" : "No certificates yet!")}";
+    }
 }

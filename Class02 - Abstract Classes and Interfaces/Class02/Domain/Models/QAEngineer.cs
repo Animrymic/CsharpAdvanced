@@ -17,4 +17,8 @@ public class QAEngineer : Person
         TestingFrameworks = frameworks;
     }
 
+    public override string GetInfo()
+    {
+        return $"{GetFullName()} ({Age}) - Knows testing frameworks: {(TestingFrameworks.Count != 0 ? string.Join(", ", TestingFrameworks) : "N/A")}";
+    }
 }
