@@ -1,6 +1,8 @@
-﻿namespace Domain.BaseEntity;
+﻿using Domain.Interfaces;
 
-public abstract class Person
+namespace Domain.BaseEntity;
+
+public abstract class Person : IPerson
 {
     public int Id { get; set; }
     public string FirstName { get; set; }
@@ -27,4 +29,8 @@ public abstract class Person
 
     public abstract string GetInfo();
 
+    public void Greet(string name)
+    {
+        Console.WriteLine($"Hello {name}");
+    }
 }

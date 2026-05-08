@@ -1,4 +1,5 @@
-﻿using Domain.Models;
+﻿using Domain.Interfaces;
+using Domain.Models;
 
 
 #region Creating instances (objects)
@@ -21,4 +22,5 @@ Console.WriteLine(operations.GetInfo());
 Console.WriteLine(devOps.GetInfo());
 Console.WriteLine(qa.GetInfo());
 Console.WriteLine(dev.GetInfo());
+
 #endregion
