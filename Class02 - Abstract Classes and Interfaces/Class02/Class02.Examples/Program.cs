@@ -1,6 +1,6 @@
-﻿using Domain.Interfaces;
+﻿using Domain.BaseEntity;
+using Domain.Interfaces;
 using Domain.Models;
-
 
 #region Creating instances (objects)
 
@@ -33,8 +33,3 @@ dev.Code();
 dev.Greet("Buddy");
 #endregion
 
-#region Using Abstraction as Types
-
-
-
-#endregion
