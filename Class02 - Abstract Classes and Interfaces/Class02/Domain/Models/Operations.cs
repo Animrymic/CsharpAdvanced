@@ -1,8 +1,9 @@
 ﻿using Domain.BaseEntity;
+using Domain.Interfaces;
 
 namespace Domain.Models;
 
-public class Operations : Person
+public class Operations : Person, IOperations
 {
     public List<string> Projects { get; set; } = new();
 
@@ -20,5 +21,10 @@ public class Operations : Person
     public override string GetInfo()
     {
         return $"{GetFullName()} ({Age}) - Currently working on {Projects.Count} projects";
+    }
+
+    public bool CheckInfrastructure(int status)
+    {
+        throw new NotImplementedException();
     }
 }

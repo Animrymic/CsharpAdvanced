@@ -17,10 +17,24 @@ DevOps devOps = new DevOps("John", "Doe", 29, "+1 123 123 1234", false, true);
 QAEngineer qa = new QAEngineer("Steve", "Stevenson", 34, "+1 123 354 4323", ["Selenium",
 "Playwright"]);
 
-Console.WriteLine(tester.GetInfo());
-Console.WriteLine(operations.GetInfo());
+//Console.WriteLine(tester.GetInfo());
+//Console.WriteLine(operations.GetInfo());
+
 Console.WriteLine(devOps.GetInfo());
+devOps.Code();
+Console.WriteLine(devOps.CheckInfrastructure(500) ? "Error occured!" : "Everything's fine"); 
+
 Console.WriteLine(qa.GetInfo());
+qa.Code();
+qa.TestFeature("Log in");
+
 Console.WriteLine(dev.GetInfo());
+dev.Code();
+dev.Greet("Buddy");
+#endregion
+
+#region Using Abstraction as Types
+
+
 
 #endregion

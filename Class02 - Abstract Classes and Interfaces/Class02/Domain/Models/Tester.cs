@@ -1,8 +1,9 @@
 ﻿using Domain.BaseEntity;
+using Domain.Interfaces;
 
 namespace Domain.Models;
 
-public class Tester : Person
+public class Tester : Person, ITester
 {
     public int BugsFound { get; set; }
 
@@ -20,5 +21,10 @@ public class Tester : Person
     public override string GetInfo()
     {
         return $"{GetFullName()} ({Age}) - Found: {BugsFound} Bugs"; 
+    }
+
+    public void TestFeature(string feature)
+    {
+        Console.WriteLine($"");
     }
 }
