@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Class03.Polymorphism/Class03.Polymorphism.csproj" />
   <Project Path="Class03.StaticClasses/Class03.StaticClasses.csproj" />
 </Solution>
