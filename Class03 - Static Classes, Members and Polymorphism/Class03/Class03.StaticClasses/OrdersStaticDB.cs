@@ -36,5 +36,7 @@ public static class OrdersStaticDB
         Users[0].Orders.Add(Orders[2]);
         Users[1].Orders.Add(Orders[3]);
         Users[1].Orders.Add(Orders[4]);
+
+        orderIdCounter = Orders.Max(o => o.Id);
     }
 }
