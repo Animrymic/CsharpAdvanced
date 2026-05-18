@@ -6,7 +6,7 @@ public class Product
     public string Title { get; set; }
     public string Description { get; set; }
 
-    public override string GetInfo()
+    public string GetInfo()
     {
         return $"{Id}) {Title} - {Description}";
     }

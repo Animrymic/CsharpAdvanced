@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Class04.Extensions/Class04.Extensions.csproj" Id="c878628d-a3e9-4af1-809a-d16cdf8c4267" />
   <Project Path="Class04.Generics/Class04.Generics.csproj" />
+  <Project Path="Class04.ValueReferenceTypes/Class04.ValueReferenceTypes.csproj" Id="3abfe538-be85-4b06-a013-6964fa49b76f" />
 </Solution>
