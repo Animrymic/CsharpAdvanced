@@ -25,7 +25,7 @@ string? john2 = names.Find(name =>
 //return type => int
 
 Console.ForegroundColor = ConsoleColor.Blue;
-Console.WriteLine("\n=============FUNC==============");
+Console.WriteLine("\n=============FUNC================================");
 Console.ResetColor();
 
 //var sum = (num1, num2) => num1 + num2;
@@ -73,11 +73,66 @@ Func<Person, string> getPersonName = person =>
 Person bob = new Person {Name = "Bob"};
 Console.WriteLine(getPersonName(bob));
 
-// ===> Example of a Func that only prints Hello World
+Console.ForegroundColor = ConsoleColor.Green;
+
+Console.WriteLine("\n=============ACTION==============================");
+Console.ResetColor();
+
+// ===> Example of a Action that prints Hello
 Action printHello = () =>
 {
     Console.WriteLine("Hello");
 };
+// Call the Action to print Hello
+printHello();
 
+Action<string> printRed = word =>
+{
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    Console.WriteLine(word);
+    Console.ResetColor();
+};
+printRed("Something went wrong!");
+
+Action<string, ConsoleColor> printInColor = (text, color) =>
+{
+    Console.ForegroundColor = color;
+    Console.WriteLine(text);
+    Console.ResetColor();
+};
+
+printInColor("This is a message in Yellow!", ConsoleColor.Yellow);
+printInColor("This is a message in Cyan!", ConsoleColor.Cyan);
+
+printInColor("\n=============PREDICATE==============================", ConsoleColor.DarkYellow);
+
+Predicate<Person> isActive  = person => person.IsActive;
+
+Person bob2 = new Person { IsActive = true };
+Person alice2 = new Person { IsActive = false };
+
+Console.WriteLine("Is Bob active? " + isActive(bob2));
+Console.WriteLine("Is Alice active? " + isActive(alice2));
+
+printInColor("\n=============Func & Action with HoF and LINQ==============================", ConsoleColor.DarkMagenta);
+
+//Example of using Func with List.Find to find a name in the list
+string? foundBob = names.Find(n => n == "Bob");
+
+Predicate<string> isJill = n => n == "Jill";
+string? foundJill = names.Find(isJill);
+
+Func<string, bool> isJillFunc = n => n == "Jill";
+string? foundJillFirst = names.FirstOrDefault(isJillFunc);
+
+//Example of using Func with LINQ to filter names starting with "J"
+Func<string, bool> NamesStartingWithJ = n => n.StartsWith("J");
+List<string> namesStartingWithJ = names.Where(NamesStartingWithJ).ToList();
+//Console.WriteLine("Names starting with J: " + string.Join(", ", namesStartingWithJ));
+namesStartingWithJ.ForEach(Console.WriteLine);
+
+
+
+Console.ReadLine();
 
 

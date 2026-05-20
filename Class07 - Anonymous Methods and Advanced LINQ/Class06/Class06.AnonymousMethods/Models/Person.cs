@@ -6,6 +6,7 @@ public class Person
     public string Name { get; set; } = string.Empty;
     public double Salary { get; set; }
     public bool IsActive { get; set; }
+    public int Age { get; set; }
 }
 
 
