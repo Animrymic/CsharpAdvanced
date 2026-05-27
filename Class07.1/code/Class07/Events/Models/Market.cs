@@ -51,5 +51,12 @@ namespace Events.Models
             OnPromotionSent?.Invoke(ProductTypeOnPromotion);
         }
 
+        public void UnsubscribeFromPromotion(PromotionHandler promotionHandler, string email, string reason)
+        {
+            OnPromotionSent -= promotionHandler;
+            SubscribersEmails.Remove(email);
+            UnsubscribeReasons.Add(reason);
+        }
+
     }
 }
