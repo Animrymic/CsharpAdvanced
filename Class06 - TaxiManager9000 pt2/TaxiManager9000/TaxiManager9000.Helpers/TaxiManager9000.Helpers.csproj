@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaxiManager9000.DataAccess\TaxiManager9000.DataAccess.csproj" />
+    <ProjectReference Include="..\TaxiManager9000.Domain\TaxiManager9000.Domain.csproj" />
+    <ProjectReference Include="..\TaxiManager9000.Services\TaxiManager9000.Services.csproj" />
+  </ItemGroup>
+
+</Project>
