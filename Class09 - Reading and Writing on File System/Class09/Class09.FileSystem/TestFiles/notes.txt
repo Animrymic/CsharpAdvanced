@@ -1,0 +1,6 @@
+This is a sample note!
+This file is created using StreamWriter.
+Have a nice day!
+NEW This is a NEW sample note!
+NEW This NEW file is created using StreamWriter.
+NEW Have a NEW nice day!
