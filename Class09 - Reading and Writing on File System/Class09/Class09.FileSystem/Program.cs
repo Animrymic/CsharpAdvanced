@@ -132,4 +132,22 @@ catch (Exception ex)
     Console.WriteLine( "Error writing in file: " + ex.Message);
 }
 
+Console.WriteLine("============================ STREAM READER ============================");
+
+try
+{
+    using (StreamReader streamReader = new StreamReader(fullFilePath))
+    {
+        string line;
+        while ((line = streamReader.ReadLine()) != null)
+        {
+            Console.WriteLine(line);
+        }
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Error reading file: " + ex.Message);
+}
+
 #endregion
