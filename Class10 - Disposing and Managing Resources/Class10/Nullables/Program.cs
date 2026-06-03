@@ -20,3 +20,35 @@ string? text2 = null;
 
 Person bob = new Person();
 bob.Score = null;
+
+
+Console.WriteLine("============ DISPOSING ============");
+
+const string FolderPath = @"..\..\..\Text";
+string filePath = Path.Combine(FolderPath, "text.txt");
+string FilePath = filePath; // if you need a separate FilePath variable
+
+static void CreateFolder(string path)
+{
+    if (!Directory.Exists(path))
+    {
+        Directory.CreateDirectory(path);
+    }
+}
+
+static void CreateFile(string path)
+{
+    if (!File.Exists(path))
+    {
+        File.Create(path).Close(); 
+    }
+}
+
+CreateFolder(FolderPath);
+CreateFile(FilePath);
+
+#region Manual Dispose Methods
+
+
+
+#endregion

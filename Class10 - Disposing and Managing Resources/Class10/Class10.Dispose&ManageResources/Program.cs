@@ -1,6 +1,7 @@
 ﻿#region Value and Reference Types
 using Class10.Dispose_ManageResources;
 using Class10.DisposeAndManageResources.Helpers;
+using System.Diagnostics;
 
 ExtendedConsole.PrintInColor("\n================ STACK and HEAP ================\n", ConsoleColor.Dark    Cyan);
 ExtendedConsole.PrintInColor("\n============= VALUE TYPES and REFERENCE TYPES =============\n", ConsoleColor.Cyan);
@@ -42,3 +43,24 @@ Console.WriteLine(stringOne);
 Console.WriteLine(stringTwo);
 
 #endregion
+
+#region Objects Lifecycle
+
+ExtendedConsole.PrintInColor("\n================ OBJECTS LIFECYCLE ================\n", ConsoleColor.Yellow);
+
+static void TestObjectFinalizer()
+{
+    User bob = new User("Bob", "Bobsky", 34);
+    User john = new User(firstName: "John", lastName: "Doe", age: 32);
+    Console.WriteLine("Logic with bob object...");
+    bob.PrintInfo();
+    Console.WriteLine("More logic...");
+    john.PrintInfo();
+    Console.WriteLine("Okay we do not need the objects anymore. Throw them away :D");
+}
+
+TestObjectFinalizer();
+
+#endregion
+
+Console.WriteLine("dkaldaklsd");
