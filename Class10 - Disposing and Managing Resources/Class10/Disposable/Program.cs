@@ -112,4 +112,41 @@ void UsingDisposeExample()
 //ManualDisposeExample();
 UsingDisposeExample();
 
+#region Dispose with our own 'disposable' class
+static void AppendTextInFileCustomDisposing(string text, string path)
+{
+    //OurWriter ourWriter = new OurWriter(path);
+    //ourWriter.Write(text);
+    //ourWriter.Dispose();
+
+    using (OurWriter ourWriter = new OurWriter(path))
+    {
+        ourWriter.Write(text);
+    }
+}
+
+static void ReadTextFromFileCustomDisposing(string path)
+{
+    using OurReader ourReader = new OurReader(path);
+    ourReader.Read();
+}
+
+void OurDisposableExample()
+{
+    ExtendedConsole.PrintInColor("Enter text part 1: ");
+    string text1 = Console.ReadLine();
+    AppendTextInFileCustomDisposing(text1, FilePath);
+    ExtendedConsole.PrintInColor("Enter text part 2: ");
+    string text2 = Console.ReadLine();
+    AppendTextInFileCustomDisposing(text2, FilePath);
+    ExtendedConsole.PrintInColor("Enter text part 3: ");
+    string text3 = Console.ReadLine();
+    AppendTextInFileCustomDisposing(text3, FilePath);
+    Console.ReadLine();
+    Console.WriteLine("----------------- Read -----------------\n");
+    ReadTextFromFileCustomDisposing(FilePath);
+}
+#endregion
+OurDisposableExample();
+
 Console.ReadLine();
