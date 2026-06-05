@@ -1,4 +1,4 @@
-﻿namespace Class10.DisposeAndManageResources.Helpers 
+﻿namespace Helpers
 {
     public static class ExtendedConsole
     {
