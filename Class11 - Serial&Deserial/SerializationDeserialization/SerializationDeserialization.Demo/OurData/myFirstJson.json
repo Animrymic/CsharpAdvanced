@@ -1,7 +1,6 @@
 {
-    "firstName": "Bob",
-    "lastName": "Bobsky",
-    "age": 33,
-    "isPartTime": false
+  "FirstName": "Bob",
+  "LastName": "Bobsky",
+  "Age": 33,
+  "IsPartTime": false
 }
-
