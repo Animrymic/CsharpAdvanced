@@ -51,8 +51,7 @@ Student deserializedStudent = OurJsonSerializer.DeSerializeStudent(bobJsonFromFi
 string bobSerializedNewtonsoftJson = JsonConvert.SerializeObject(bob, Formatting.Indented);
 WriteInFile(filePath, bobSerializedNewtonsoftJson);
 
-Student bobDeserializedNewtonsoftJson = JsonConvert.DeserializeObject<Student>
-    (bobSerializedNewtonsoftJson);
+Student bobDeserializedNewtonsoftJson = JsonConvert.DeserializeObject<Student>(bobSerializedNewtonsoftJson);
 
 #endregion
 
