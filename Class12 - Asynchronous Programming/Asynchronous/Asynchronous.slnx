@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Asynchronous.Demo/Asynchronous.Demo.csproj" />
+  <Project Path="Tasks/Tasks.csproj" />
+  <Project Path="Threads/Threads.csproj" />
+</Solution>
