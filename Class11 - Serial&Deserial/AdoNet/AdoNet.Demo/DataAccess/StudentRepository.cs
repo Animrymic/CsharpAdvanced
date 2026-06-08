@@ -4,7 +4,7 @@ using System.Data;
 
 namespace AdoNet.Demo.DataAccess;
 
-internal class StudentRepository
+public class StudentRepository
 {
     private readonly string _connectionString;
 
@@ -64,5 +64,41 @@ internal class StudentRepository
 
         return students;
     }
-    
+
+    public void InsertStudentSafe(Student student)
+    {
+        using (SqlConnection sqlConnection = new SqlConnection(_connectionString))
+        {
+            sqlConnection.Open();
+            string query = @"INSERT INTO dbo.Student (FirstName, LastName, DateOfBirth, EnrolledDate, Gender, NationalIdNumber, StudentCardNumber) 
+                            VALUES (@FirstName, @LastName, @DateOfBirth, @EnrolledDate, @Gender, @NationalIdNumber, @StudentCardNumber)";
+
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.AddWithValue("@FirstName", student.FirstName);
+                command.Parameters.AddWithValue("@LastName", student.LastName);
+                command.Parameters.AddWithValue("@DateOfBirth", student.DateOfBirth);
+                command.Parameters.AddWithValue("@EnrolledDate", student.EnrolledDate);
+                command.Parameters.AddWithValue("@Gender", student.Gender);
+                command.Parameters.AddWithValue("@NationalIdNumber", student.NationalIdNumber);
+                command.Parameters.AddWithValue("@StudentCardNumber", student.StudentCardNumber);
+
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    public void InsertStudentSqlInjection(Student student)
+    {
+        using (SqlConnection sqlConnection = new SqlConnection(_connectionString))
+        {
+            sqlConnection.Open();
+            string query = $"INSERT INTO dbo.Student (FirstName, LastName, DateOfBirth, EnrolledDate, Gender, NationalIdNumber, StudentCardNumber) " +
+                           $"VALUES ('{student.FirstName}', '{student.LastName}', '{student.DateOfBirth:yyyy-MM-dd}', '{student.EnrolledDate:yyyy-MM-dd}', '{student.Gender}', {student.NationalIdNumber}, '{student.StudentCardNumber}')";
+
+            using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+        }
+    }
 }

@@ -1,6 +1,6 @@
 ﻿namespace AdoNet.Demo.Models;
 
-internal class Student
+public class Student
 {
     public int Id { get; set; }
     public string? FirstName { get; set; } 
