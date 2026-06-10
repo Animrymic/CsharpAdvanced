@@ -8,4 +8,19 @@ public class User : BaseEntity
     public string Username { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
     public Role Role { get; set; }
+
+    public User(string username, string password, Role role)
+    {
+        Username = username;
+        Password = password;
+        Role = role;
+    }
+
+    public User() { }
+
+    public override string GetInfo()
+    {
+        return $"User with username: [{Username}]";
+    }
+
 }

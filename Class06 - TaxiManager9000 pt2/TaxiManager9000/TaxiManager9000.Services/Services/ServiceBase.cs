@@ -44,5 +44,10 @@ namespace TaxiManager9000.Services.Services
             _db.RemoveById(id);
         }
 
+        public void Seed(List<T> items)
+        {
+            if (_db.GetAll().Count > 0) return;
+            items.ForEach(x => _db.Add(x));
+        }
     }
 }

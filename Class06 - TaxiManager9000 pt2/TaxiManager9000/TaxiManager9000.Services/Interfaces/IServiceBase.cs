@@ -10,5 +10,6 @@ namespace TaxiManager9000.Services.Interfaces
         void Insert(T entity);
         bool Update(T entity);
         void Remove(int id);
+        void Seed(List<T> items);
     }
 }

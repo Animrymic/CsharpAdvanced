@@ -11,5 +11,10 @@
             }
             return -1;
         }
+
+        public static bool ValidateStringInput(string text)
+        {
+            return !string.IsNullOrEmpty(text);
+        }
     }
 }

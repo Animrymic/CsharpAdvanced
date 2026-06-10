@@ -11,4 +11,12 @@ public class Driver : BaseEntity
     public Car? Car { get; set; }
     public string License { get; set; } = string.Empty;
     public DateTime LicenseExpieryDate { get; set; }
+    public object NoShift { get; }
+    public object Value { get; }
+    public DateTime DateTime { get; }
+
+    public override string GetInfo()
+    {
+        return $"Driver: {FirstName} {LastName} with license {License}";
+    }
 }
