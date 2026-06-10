@@ -13,6 +13,7 @@ namespace TaxiManager9000.Services.Services
         {
             _db = new GenericDb<T>();
         }
+
         public List<T> GetAll()
         {
             return _db.GetAll();

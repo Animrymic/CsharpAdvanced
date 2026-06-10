@@ -2,6 +2,6 @@
   <Project Path="TaxiManager9000.App/TaxiManager9000.App.csproj" />
   <Project Path="TaxiManager9000.DataAccess/TaxiManager9000.DataAccess.csproj" />
   <Project Path="TaxiManager9000.Domain/TaxiManager9000.Domain.csproj" />
-  <Project Path="TaxiManager9000.Helper/TaxiManager9000.Helper.csproj" Id="23b55964-b12f-4f37-bf14-806e7312dc31" />
+  <Project Path="TaxiManager9000.Helpers/TaxiManager9000.Helpers.csproj" Id="657652c8-4fcf-4303-ae3f-f1242a7c0e56" />
   <Project Path="TaxiManager9000.Services/TaxiManager9000.Services.csproj" />
 </Solution>
